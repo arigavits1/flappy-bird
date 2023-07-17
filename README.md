@@ -1,3 +1,4 @@
 # flappy-bird
-Flappy bird in c++ using sfml
+Flappy bird in c++ using sfml.
+
 The code is bad. I know
