@@ -65,7 +65,7 @@ int main()
     loadTexture(&gameoverTexture, "res/images/gameover.png", false);
     loadFont(&fontFont);
 
-    Object bird(sf::Vector2((float)(WIN_WIDTH / 2), (float)(WIN_HEIGHT / 2 - 250.0f)), 0.0f, sf::Vector2(1.5f, 1.5f), &birdTextrue);
+    Object bird(sf::Vector2((float)(WIN_WIDTH / 2), (float)(WIN_HEIGHT / 2 - 100.0f)), 0.0f, sf::Vector2(1.5f, 1.5f), &birdTextrue);
     Object background(sf::Vector2((float)(WIN_WIDTH / 2), (float)(WIN_HEIGHT / 2)), 0.0f, sf::Vector2(2.2f, 2.0f), &backgroundTexture);
     Object gameover(sf::Vector2((float)WIN_WIDTH / 2, (float)WIN_HEIGHT / 2), 0.0f, sf::Vector2(1.2f, 1.2f), &gameoverTexture);
     Score playerScore(fontFont, std::to_string(score), 50);
