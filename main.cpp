@@ -48,6 +48,7 @@ bool afterPause = false;
 int score = 0;
 int highScore = 0;
 float scoreTime = 0;
+float timeAfterPause = 0;
 
 int main()
 {
@@ -166,6 +167,7 @@ int main()
         }
         else
         {
+            timeAfterPause += deltaTime;
             std::ifstream infile("res/dev/score.txt");
             if (infile.is_open())
             {
@@ -202,7 +204,7 @@ int main()
             playerScore.setString("score: " + std::to_string(score));
             playerScore.draw(window);
             playerHighScore.draw(window);
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && timeAfterPause > 0.3f)
             {
                 scoreTime = 0;
                 score = 0;
@@ -212,6 +214,7 @@ int main()
                 pipes.clear();
                 afterPause = true;
                 pipeSetup(&pipes);
+                timeAfterPause = 0.0f;
                 gamePaused = false;
             }
         }
